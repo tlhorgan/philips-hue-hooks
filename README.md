@@ -4,6 +4,16 @@ This is an experimental attempt to simulate a webhook behavior when motion is de
 
 **BETA alert**: APIs are subject to change!
 
+## Sample Output
+```
+Sensor 4 => SwitchState.ON
+Sensor 9 => State.OFF
+Sensor 4 => SwitchState.OFF
+Sensor 4 => SwitchState.BRIGHTNESS_UP
+Sensor 9 => State.ON
+Sensor 4 => SwitchState.ON
+```
+
 ## Initialisation
 
 ### Identify the bridge address
@@ -17,7 +27,7 @@ You can use a network discovery tool such as `nmap`.
 
 ### Identify the sensor(s)
 - Navigate to `http://<hostname>/debug/clip.html`
-- GET `/api/<username>/sensors`, and note the sensor ID corresponding to your motion detection sensor.
+- GET `/api/<username>/sensors`, and note the sensor ID corresponding to your motion detection sensor or light switch.
 
 ### More info
 For more information, you can check Philips' [getting started](https://www.developers.meethue.com/documentation/getting-started) docs.
