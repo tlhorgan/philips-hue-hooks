@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage('Validate') {
             agent {
-                dockerfile true
+                dockerfile {
+                    additionalBuildArgs '--target build'
+                }
             }
             environment {
                 OUTPUT_FILE = 'pylint.out'

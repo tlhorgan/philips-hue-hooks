@@ -22,21 +22,32 @@ You can use a network discovery tool such as `nmap`.
 ### More info
 For more information, you can check Philips' [getting started](https://www.developers.meethue.com/documentation/getting-started) docs.
 
+## Docker Quick Start
+
+```
+docker run -t \
+    -e BRIDGE_HOST=192.168.0.16 \
+    -e USERNAME=DjKbc3uiIPf7xleIw08FD3UR7V1vzJGNnfRcDbFv \
+    -e SENSOR_IDS=4,9 \
+    -e TARGET=http://localhost:8080 \
+      chadiem/philips-hue-hooks
+```
+
 ## Run
 
 ### Test
 ```
-./hook.sh --host=<host> \
+./hook.sh --bridge-host=<host> \
     --username=<username> \
-    --sensor_ids=<sensor_ids>
+    --sensor-ids=<sensor_ids>
 ```
 
 For example,
 
 ```
-./hook.sh --host=192.168.0.16 \
+./hook.sh --bridge-host=192.168.0.16 \
     --username=DjKbc3uiIPf7xleIw08FD3UR7V1vzJGNnfRcDbFv \
-    --sensor_ids=9
+    --sensor-ids=9
 ```
 
 Check that sensor movements are logged on stdout.
@@ -58,17 +69,17 @@ where `new_state` is:
 
 Then start the motion poller:
 ```
-./hook.sh --host=<host> \
+./hook.sh --bridge-host=<host> \
     --username=<username> \
-    --sensor_ids=<sensor_ids> \
+    --sensor-ids=<sensor_ids> \
     --target=<hook_target>
 ```
 
 For example,
 
 ```
-./hook.sh --host=192.168.0.16 \
+./hook.sh --bridge-host=192.168.0.16 \
     --username=DjKbc3uiIPf7xleIw08FD3UR7V1vzJGNnfRcDbFv \
-    --sensor_ids=9 \
+    --sensor-ids=9 \
     --target=http://localhost:8080
 ```
