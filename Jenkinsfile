@@ -7,7 +7,7 @@ pipeline {
         stage('Validate') {
             agent {
                 dockerfile {
-                    additionalBuildArgs '--target build'
+                    filename 'Dockerfile.build'
                 }
             }
             environment {
