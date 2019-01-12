@@ -9,19 +9,19 @@ if __name__ == '__main__':
 
     parser.add('--bridge-host',
                required=True,
-               env_var='BRIDGE_HOST',
+               env_var='192.168.1.203',
                help='Hostname/IP address to poll on (for example: 192.168.0.17)')
     parser.add('--username',
                required=True,
-               env_var='USERNAME',
+               env_var='oK4bBb0BOWX7QgIICIXpSt36EbKXPf9ab2tw6mj1',
                help='Username to use (for example: DjKbc3uiIBf7xleIw08FD3UR7V1vzJGNnfRcDbFv)')
     parser.add('--sensor-ids',
                required=True,
-               env_var='SENSOR_IDS',
+               env_var='7',
                help='Comma-separated list of sensor IDs (for example: 4,9)')
     parser.add('--target',
                action='append',
-               env_var='TARGET',
+               env_var='https://maker.ifttt.com/use/bA9mdbLgtK-vRTcpZsisCl',
                help='The WebHook URL(s) to POST to (optional; if absent, will print to stdout)')
 
     args = parser.parse_known_args()[0]
